@@ -8,6 +8,7 @@ Group:		Development/Libraries
 Source0:	http://www.autistici.org/bakunin/libmrss/%{name}-%{version}.tar.gz
 # Source0-md5:	a6f66b72898d27270e3a68007f90d62b
 URL:		http://www.autistici.org/bakunin/libmrss/
+BuildRequires:	curl-devel
 BuildRequires:	libnxml-devel
 Requires:	libnxml
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -24,6 +25,8 @@ Summary:	Header files for mRss library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki mRss
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	curl-devel
+Requires:	libnxml-devel
 
 %description devel
 Header files for mRss library.
@@ -57,6 +60,7 @@ Statyczna biblioteka mRss.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -69,17 +73,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libmrss.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libmrss.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
-%{_pkgconfigdir}/*.pc
+%attr(755,root,root) %{_libdir}/libmrss.so
+%{_libdir}/libmrss.la
+%{_includedir}/mrss.h
+%{_pkgconfigdir}/mrss.pc
 
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libmrss.a
