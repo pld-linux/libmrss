@@ -1,12 +1,12 @@
 Summary:	C library for parsing, writing and creating RSS files or streams
 Summary(pl.UTF-8):	Biblioteka obsługująca parsowanie, tworzenie i zapisywanie kanałów RSS
 Name:		libmrss
-Version:	0.19.2
-Release:	2
+Version:	0.19.4
+Release:	1
 License:	LGPL v2
 Group:		Development/Libraries
-Source0:	http://www.autistici.org/bakunin/libmrss/%{name}-%{version}.tar.gz
-# Source0-md5:	a6f66b72898d27270e3a68007f90d62b
+Source0:	https://github.com/bakulf/libmrss/archive/refs/tags/%{version}.tar.gz
+# Source0-md5:	5462f3093f7e598abb34dc8123129555
 URL:		http://www.autistici.org/bakunin/libmrss/
 BuildRequires:	curl-devel
 BuildRequires:	libnxml-devel
@@ -74,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libdir}/libmrss.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libmrss.so.0
 
