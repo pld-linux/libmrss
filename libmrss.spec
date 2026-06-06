@@ -2,7 +2,7 @@ Summary:	C library for parsing, writing and creating RSS files or streams
 Summary(pl.UTF-8):	Biblioteka obsługująca parsowanie, tworzenie i zapisywanie kanałów RSS
 Name:		libmrss
 Version:	0.19.4
-Release:	1
+Release:	2
 License:	LGPL v2
 Group:		Development/Libraries
 Source0:	https://github.com/bakulf/libmrss/archive/refs/tags/%{version}.tar.gz
